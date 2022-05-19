@@ -5,7 +5,7 @@ def menu():
    print("To update item in inventory, press 2")
    print("To delete item in inventory, press 3")
    print("To view all items, press 4")
-   print("To undelte recently deleted item, press 5")
+   print("To undelete recently deleted item, press 5")
 
 if __name__== "__main__":
     inv = Inventory()
@@ -18,10 +18,12 @@ if __name__== "__main__":
     while start not in invalid_choices:
         menu()
         choice = input("Enter choice: ")
+        print("\n")
         while choice not in valid_choices:
             print("Wrong choice!")
             menu()
             choice = input("Enter choice: ")
+            print("\n")
         #get Item ID from user only if undeleted is not selected. Make sure ID is input, unique ID is essential for working of the Inventory system
         if choice in valid_choices[:3]:
             id = input("Item Id: ")
@@ -40,11 +42,13 @@ if __name__== "__main__":
         else:
             success = inv.undelete()
 
+        print("\n")
         if success == -1:
             print("Process not successful")
         else:
             print("Process successful")
 
-        start = input("Only press q to quit, anything else to proceed: ")
+        print("\n")
+        start = input("Only press q to quit, anything else to proceed: \n")
 
     print("****CLOSING INVENTORY****")

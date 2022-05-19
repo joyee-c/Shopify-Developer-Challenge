@@ -59,7 +59,7 @@ class Inventory:
     def undelete(self):
         id = 0
         if not self.recycle_bin:
-            print("No recently deleted item")
+            print("No recently deleted item, recycle bin is empty")
             return -1
         for key,value in self.recycle_bin.items():
             if key=="id":
@@ -68,6 +68,7 @@ class Inventory:
             else:
                 self.inventory[id][key] = value
 
+        self.recycle_bin = {}
         return 0
 
     def print_all(self):
