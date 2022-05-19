@@ -16,6 +16,7 @@ if __name__== "__main__":
     start = input("Only press q to quit, anything else to proceed: ")
 
     while start not in invalid_choices:
+        print("\n")
         menu()
         choice = input("Enter choice: ")
         print("\n")
@@ -49,6 +50,6 @@ if __name__== "__main__":
             print("Process successful")
 
         print("\n")
-        start = input("Only press q to quit, anything else to proceed: \n")
+        start = input("Only press q to quit, anything else to proceed: ")
 
     print("****CLOSING INVENTORY****")
